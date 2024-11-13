@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <form action="/user/cms" method="post" encType="multipart/form-data">
+            <h1 class="mb-4">CMS Form</h1>
+
+            <!-- Navbar Section -->
+            <h2>Navbar Section</h2>
+            <div class="mb-4">
+                <label for="logo" class="form-label">Logo Image</label>
+                <input type="file" class="form-control" id="logo" name="logo_square" accept="image/*">
+            </div>
+            <div class="mb-4">
+                <label for="navlinks" class="form-label">Navlinks (comma separated)</label>
+                <input type="text" class="form-control" name="navlinks" id="navLinks" placeholder="Home, About, Services, Contact">
+            </div>
+
+            <hr class="mt-1 mb-1"/>
+            
+            <!-- Hero Section -->
+            <h2>Hero Section</h2>
+            <div class="mb-4">
+                <label for="heroTitle" class="form-label">Title of Hero Section</label>
+                <input type="text" class="form-control" id="heroTitle" name="heroTitle">
+            </div>
+            <div class="mb-4">
+                <label for="heroSubTitle" class="form-label">Sub Title of Hero Section</label>
+                <input type="text" class="form-control" id="heroSubTitle" name="heroSubTitle">
+            </div>
+            <div class="mb-4">
+                <label for="heroParagraph" class="form-label">Paragraph Related to Hero Section</label>
+                <textarea class="form-control" id="heroParagraph" name="heroParagraph" rows="3"></textarea>
+            </div>
+
+            <div class="mb-4">
+                <label for="slider_bg" class="form-label">Slider Background</label>
+                <input type="file" class="form-control" id="slider_bg" name="sliderBg" accept="image/*">
+            </div>
+
+            <div class="mb-4">
+                <label for="heroButtonLink" class="form-label">Link Button URL</label>
+                <input type="url" class="form-control" id="heroButtonLink" name="heroButtonLink" placeholder="https://example.com">
+            </div>
+    
+            <hr class="mt-1 mb-1"/>
+            
+            <!-- Activities Section -->
+            <h2>Activities Section</h2>
+    
+            <!-- Pre-Primary Activities -->
+            <h3>Pre-Primary Activities</h3>
+            <div id="prePrimaryCards" class="mb-4"></div>
+            <button class="btn btn-secondary mb-4" id="addPrePrimaryCard" type="button">Add Pre-Primary Card</button>
+    
+            <!-- Primary Activities -->
+            <h3>Primary Activities</h3>
+            <div id="primaryCards" class="mb-4"></div>
+            <button class="btn btn-secondary mb-4" id="addPrimaryCard" type="button">Add Primary Card</button>
+    
+
+            
+            <hr class="mt-1 mb-1"/>
+            
+            <!-- About Us -->
+            <h2>About Us Section</h2>
+            <div class="mb-4">
+                <label for="aboutUsTitle" class="form-label">Title</label>
+                <input type="text" class="form-control" id="aboutUsTitle" name="aboutUsTitle" placeholder="Enter title">
+            </div>
+            <div class="mb-4">
+                <label for="aboutUsSubtitle" class="form-label">Subtitle</label>
+                <input type="text" class="form-control" id="aboutUsSubtitle" name="aboutUsSubtitle" placeholder="Enter subtitle">
+            </div>
+            <div class="mb-4">
+                <label for="aboutUsParagraph" class="form-label">Paragraph</label>
+                <textarea class="form-control" id="aboutUsParagraph" name="aboutUsParagraph" rows="4" placeholder="Write about us..."></textarea>
+            </div>
+            <div class="mb-4">
+                <label for="aboutUsImage" class="form-label">Image</label>
+                <input type="file" class="form-control" id="aboutUsImage" name="aboutUsImage" accept="image/*">
+            </div>
+
+            <!-- Our Philosophy -->
+            <!-- Our Philosophy Section -->
+            <h2>Our Philosophy Section</h2>
+            <div class="mb-4">
+                <label for="philosophyImage" class="form-label">Philosophy Image</label>
+                <input type="file" class="form-control" id="philosophyImage" name="philosophyImage" accept="image/*">
+            </div>
+            <div class="mb-4">
+                <label for="philosophyTitle" class="form-label">Title of Philosophy Section</label>
+                <input type="text" class="form-control" id="philosophyTitle" name="philosophyTitle" placeholder="Enter title">
+            </div>
+            <div class="mb-4">
+                <label for="philosophySubtitle" class="form-label">Subtitle of Philosophy Section</label>
+                <input type="text" class="form-control" id="philosophySubtitle" name="philosophySubtitle" placeholder="Enter subtitle">
+            </div>
+            <div class="mb-4">
+                <label for="philosophyLink" class="form-label">Link Button URL</label>
+                <input type="url" class="form-control" id="philosophyLink" name="philosophyLink" placeholder="https://example.com">
+            </div>
+            <div class="mb-4">
+                <label for="philosophyParagraph" class="form-label">Philosophy Paragraph</label>
+                <textarea class="form-control" id="philosophyParagraph" name="philosophyParagraph" rows="4" placeholder="Describe our philosophy..."></textarea>
+            </div>
+
+            <!-- Testimonial Section -->
+            <hr>
+            <h2>Testimonials Section</h2>
+            <div id="testimonialCards" class="mb-4"></div>
+            <button class="btn btn-secondary mb-4" id="addTestimonialCard" type="button">Add Testimonial</button>
+            
+            <!-- Google Map Embed Link -->
+            <hr>
+            <h2>Google Map Section</h2>
+            <div class="mb-4">
+                <label for="googleMapUrl" class="form-label">Google Map Embed URL</label>
+                <input type="url" class="form-control mb-2" id="googleMapUrl" placeholder="Paste the Google Map Embed URL here">
+            </div>
+            
+            <!-- Contact Information Updates -->
+            <hr>
+            <h2>Contact Information</h2>
+            
+            <div class="mb-4">
+                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number" required>
+            </div>
+            
+            <div class="mb-4">
+                <label for="emailId" class="form-label">Email ID</label>
+                <input type="email" class="form-control" id="emailId" name="emailId" placeholder="Enter email ID" required>
+            </div>
+            
+            <div class="mb-4">
+                <label for="facebookLink" class="form-label">Facebook Link</label>
+                <input type="url" class="form-control" id="facebookLink" name="facebookLink" placeholder="Enter Facebook profile link">
+            </div>
+            
+            <div class="mb-4">
+                <label for="instagramLink" class="form-label">Instagram Link</label>
+                <input type="url" class="form-control" id="instagramLink" name="instagramLink" placeholder="Enter Instagram profile link">
+            </div>
+            
+            <!-- Branches Section -->
+            <h3>Branches</h3>
+            <div id="branchContainer" class="mb-4"></div>
+            <button class="btn btn-secondary mb-4" id="addBranchButton" type="button">Add Branch</button>
+            <hr>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    
+    const addPrePrimaryCard = document.getElementById('addPrePrimaryCard');
+    const prePrimaryCards = document.getElementById('prePrimaryCards');
+
+    addPrePrimaryCard.addEventListener('click', e => {
+        e.preventDefault()
+        const cardHTML = `
+            <div class="card">
+                <div class="card-body">
+                    <label class="form-label">Image Upload for Pre-Primary Activity</label>
+                    <input type="file" class="form-control mb-2" name='prePrimaryCardImage' accept="image/*">
+                    <label class="form-label">Title for Pre-Primary Activity</label>
+                    <input type="text" class="form-control" name='prePrimaryCardTitle' placeholder="Activity Title">
+                </div>
+            </div>`;
+        prePrimaryCards.insertAdjacentHTML('beforeend', cardHTML);
+    });
+
+    const addPrimaryCard = document.getElementById('addPrimaryCard');
+    const primaryCards = document.getElementById('primaryCards');
+
+    addPrimaryCard.addEventListener('click', e => {
+        e.preventDefault()
+        const cardHTML = `
+            <div class="card">
+                <div class="card-body">
+                    <label class="form-label">Image Upload for Primary Activity</label>
+                    <input type="file" class="form-control mb-2" name='primaryCardImage'accept="image/*">
+                    <label class="form-label">Title for Primary Activity</label>
+                    <input type="text" class="form-control" name='primaryCardImage' placeholder="Activity Title">
+                </div>
+            </div>`;
+        primaryCards.insertAdjacentHTML('beforeend', cardHTML);
+    });
+
+    // Code to add testimonial card
+    const addTestimonialCard = document.getElementById('addTestimonialCard');
+    const testimonialCards = document.getElementById('testimonialCards');
+    let testimonialCount = 0;
+
+    addTestimonialCard.addEventListener('click', e => {
+        e.preventDefault();
+        testimonialCount++;
+
+        const cardHTML = `
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3>Testimonial ${testimonialCount}</h3>
+                    <label class="form-label">Profile Picture</label>
+                    <input type="file" class="form-control mb-2" name="testimonialProfilePic" accept="image/*" required>
+                    
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control mb-2" name="testimonialName" placeholder="Enter name" required>
+                    
+                    <label class="form-label">Designation</label>
+                    <input type="text" class="form-control mb-2" name="testimonialDesignation" placeholder="Enter designation" required>
+                    
+                    <label class="form-label">Testimonial</label>
+                    <textarea class="form-control" name="testimonialParagraph" rows="4" placeholder="Write the testimonial..." required></textarea>
+                </div>
+            </div>`;
+        
+        testimonialCards.insertAdjacentHTML('beforeend', cardHTML);
+    });
+
+    // Code to dynamically add branches
+    const addBranchButton = document.getElementById('addBranchButton');
+    const branchContainer = document.getElementById('branchContainer');
+    let branchCount = 0;
+
+    addBranchButton.addEventListener('click', e => {
+        e.preventDefault();
+        branchCount++;
+
+        const branchHTML = `
+            <div class="branch card mb-4">
+                <div class="card-body">
+                    <h4>Branch ${branchCount}</h4>
+                    <label class="form-label">Branch Address</label>
+                    <textarea class="form-control mb-2" name="branchAddress[]" rows="3" placeholder="Enter branch address" required></textarea>
+                </div>
+            </div>`;
+
+        branchContainer.insertAdjacentHTML('beforeend', branchHTML);
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <section class="navbar">
+        <div class="mobile">
+            <div class="brand">
+                <a href="#Home" class="logo">
+                    <img src="school_logo.jpg" alt="School Logo">
+                </a>
+            </div>
+            <div class="hamburger">
+                <a href="javascript:show();" class="icon">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div class="navlinks">
+            <a href="#Home" class="nav-item">HOME</a>
+            <a href="#About_Us" class="nav-item">ABOUT US</a>
+            <a href="#Academics" class="nav-item">ACADEMICS</a>
+        </div>
+        <a href="#Apply" class="apply">APPLY NOW</a>
+    </section>
+    <script>
+        let navbar = document.getElementsByClassName("navbar")[0];
+
+        window.onload(e => {
+            navbar.style.height = "200px";
+        });
+
+        function show()
+        {
+            let navheight = navbar.style.height;
+            if(navheight == "50px")
+                navheight = "200px";
+            else
+                navheight = "50px";
+
+            navbar.style.height = navheight;
+        }
+
+        window.onresize(e => {
+            if(window.screen.width > "768px")
+                navbar.style.height = "50px";
+        });
+        
+    </script>
+</body>
+</html>

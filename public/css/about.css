@@ -1,0 +1,12 @@
+.img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+#about-container{
+    background-color: #f8f8f8;
+  }
+
+.readmore {
+  border: 1px solid black;
+}

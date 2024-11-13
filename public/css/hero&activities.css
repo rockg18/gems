@@ -1,0 +1,99 @@
+:root {
+    --green: #78853f;
+    --yellow: #ffff00;
+    --white: #fefdfc;
+    --offset-white: #f7f7f7; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 300px;
+    overflow-x: scroll;
+}
+
+.hero {
+    height: 98vh;
+    width: 100vw;
+    background-color: var(--green);
+}
+
+.hero .inner-hero {
+    /* justify-self: center;
+    align-self: center; */
+    margin-top: 2.5rem;
+    height: 43rem;
+    width: 85%;
+    min-width: 300px;
+    background: url("../img/slider-bg.png");
+    background-size: cover;
+    box-shadow: -1px 1px 14px -3px #000000bf;
+    z-index: 1;
+}
+
+.hero .inner-hero .texts h2 {
+    color: var(--yellow);
+}
+
+.hero .inner-hero .texts div button{
+    background: var(--yellow);
+    border: none;
+}
+
+/* Activities section starts */
+
+.activity .img-container {
+    width: 18rem;
+    height: 11rem;
+}
+
+#showMoreBtn, #showLessBtn {
+    background: var(--yellow);
+    border: 1px solid black;
+    /* box-shadow: 1px 3px 5px 0px #000000bf; */
+}
+
+/* Activities section ends */
+
+ /* if screen size exceeds Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+    
+ }
+
+/* if screen size exceeds Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+
+    .hero {
+        height: 85vh;
+    }
+
+    .hero .inner-hero {
+        /* margin-top: 3rem; */
+        max-width: 80%;
+        
+        height: 38rem;
+        
+    }
+
+    .hero .inner-hero .texts{
+        max-width: 35rem;
+    }
+ 
+    /* Activities section starts */
+
+    .activities {
+        max-width: 80%;
+    }
+
+    /* Activities section ends */
+
+}
+
+/* if screen size exceeds Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {  }
+
+/* if screen size exceeds Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
